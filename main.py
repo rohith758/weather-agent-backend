@@ -34,12 +34,11 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, 
+    allow_origins=["*"],  # Allows all domains (Change to your specific Vercel URL later for security)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # --- MODELS ---
 class ChatRequest(BaseModel):
     query: str
